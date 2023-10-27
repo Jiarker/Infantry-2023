@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<opencv_storage>
+    <width>1280</width>
+    <height>720</height>
+    <exposure>2000</exposure>
+    <rgain>19.8</rgain>
+    <bgain>19.8</bgain>
+    <ggain>10</ggain>
+    <gain>12</gain>
+    <fps>100</fps>
+
+    <rune_exposure>400</rune_exposure>
+    <rune_gain>12</rune_gain>
+
+    <auto_exp_change>0</auto_exp_change>
+    <max_exp>3000</max_exp>
+    <min_exp>200</min_exp>
+
+</opencv_storage>

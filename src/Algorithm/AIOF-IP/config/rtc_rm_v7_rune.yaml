@@ -1,0 +1,46 @@
+%YAML:1.0
+
+runtime:
+    infer_thread_pool: 1
+
+pre_processers:
+    num: 1
+    pre_processer0:
+        name: "cv-standard-affine-prep"
+        params:
+            camera_size: [1280, 768]
+            tensor_shape: [1, 3, 416, 640]
+            tensor_layout: "NCHW"
+
+interpreters:
+    num: 1
+    interpreter0: 
+        name: "openvino-interpreter"
+        connects:
+            num: 1
+            connect0:
+                id: 0
+                port: 0
+        params: 
+            model_path: "./src/Algorithm/AIOF-IP/model/final_weights/output.xml"
+            device_name: "CPU"
+
+post_processers:
+    num: 1
+    post_processer0: 
+        name: "rm-v7-post-processer"
+        connect:
+            id: 0
+            port: 0
+        params: 
+            tensor_shape: [1, 16380, 26]
+            conf_thre: 0.5
+            iou_thre: 0.2
+            key_points_num: 5
+            remap_src: [640, 416]
+            remap_dst: [1280, 768]
+
+
+result_tags: ["B0", "B1", "B2", "R0", "R1", "R2"]
+
+

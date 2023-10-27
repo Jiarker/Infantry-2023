@@ -1,0 +1,51 @@
+%YAML:1.0
+
+runtime:
+    infer_thread_pool: 1
+
+pre_processers:
+    num: 1
+    pre_processer0:
+        name: "cv-standard-affine-prep"
+        params:
+            camera_size: [1280, 768]
+            tensor_shape: [1, 3, 416, 640]
+            tensor_layout: "NCHW"
+
+interpreters:
+    num: 1
+    interpreter0: 
+        name: "openvino-interpreter"
+        connects:
+            num: 1
+            connect0:
+                id: 0
+                port: 0
+        params: 
+            model_path: "./src/rmos_detector/AIOF-IP/model/rm-v5/output.xml"
+            device_name: "GPU"
+
+post_processers:
+    num: 1
+    post_processer0: 
+        name: "rm-v5-post-processer"
+        connect:
+            id: 0
+            port: 0
+        params: 
+            tensor_shape: [1, 16380, 42]
+            conf_thre: 0.5
+            iou_thre: 0.5
+            key_points_num: 4
+            remap_src: [640, 416]
+            remap_dst: [1280, 768]
+
+
+result_tags: [
+                "BG", "B1", "B2", "B3", "B4", "B5", "BO", "BBs", "BBb",
+                "RG", "R1", "R2", "R3", "R4", "R5", "RO", "RBs", "RBb",
+                "NG", "N1", "N2", "N3", "N4", "N5", "NO", "NBs", "NBb",
+                "PG", "P1", "P2", "P3", "P4", "P5", "PO", "PBs", "PBb"
+            ]
+
+

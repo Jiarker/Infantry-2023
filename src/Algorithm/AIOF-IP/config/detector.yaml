@@ -1,0 +1,34 @@
+/detector:
+  ros__parameters:
+    armor:
+      inside_thresh: 85.0
+      lights_Y_max_ratio: 1.5
+      lights_angle_max_diff: 5.0
+      lights_length_max_ratio: 1.5
+      max_angle: 35.0
+      width_height_max_ratio: 5.0
+      width_height_min_ratio: 1.1
+    armor_obj_pts:
+      big_height: 55.0
+      big_width: 225.0
+      rune_heigth: 125.0
+      rune_width: 225.0
+      small_height: 55.0
+      small_width: 135.0
+    light:
+      angle_to_vertigal_max: 35.0
+      blue_red_diff: 10.0
+      blue_threshold: 100.0
+      height_width_min_ratio: 1.3
+      red_blue_diff: 10.0
+      red_threshold: 100.0
+      size_area_min_ratio: 0.6
+    qos_overrides:
+      /parameter_events:
+        publisher:
+          depth: 1000
+          durability: volatile
+          history: keep_last
+          reliability: reliable
+    update_param_active: true
+    use_sim_time: false

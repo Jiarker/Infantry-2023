@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<opencv_storage>  
+
+    <show_R>0</show_R>
+
+    <!--图像参数-->
+    <blue_brightness_thresh>10</blue_brightness_thresh>
+    <blue_color_thresh>10</blue_color_thresh>
+    <red_brightness_thresh>20</red_brightness_thresh>
+    <red_color_thresh>20</red_color_thresh>
+    <blue_red_diff>20</blue_red_diff>
+
+
+    <!--深度学习使用参数-->
+    <circle_center_conf>0</circle_center_conf>
+    <no_activate_conf>0</no_activate_conf>
+    <acvitate_conf>0</acvitate_conf>
+    <circle_center_roi_width>20</circle_center_roi_width>
+
+    <max_diff_distance_ratio>0.5</max_diff_distance_ratio>
+
+    <!--拟合参数-->
+    <!-- <delay_time>0.45</delay_time> -->
+    <delay_time>0.45</delay_time>
+    <save_txt>0</save_txt>  
+    <print_result>1</print_result>
+
+</opencv_storage>

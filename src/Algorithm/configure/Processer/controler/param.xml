@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<opencv_storage>
+
+    <lost_time_thres> 1 </lost_time_thres>
+
+    <!--ekf param-->
+    <s2qxyz> 0.05 </s2qxyz>
+    <s2qyaw> 5.0 </s2qyaw>
+    <s2qr> 80.0 </s2qr>
+
+    <r_xyz_factor> 6e-5 </r_xyz_factor> <!-- 6e-5 -->
+    <r_yaw> 5e-3 </r_yaw> <!-- 5e-3 -->
+
+    <delay> -0.027 </delay>
+    <true_x> 687 </true_x>
+
+    <!-- offset of gun pitch yaw -->
+    <gun_pitch_offset> 0.2 </gun_pitch_offset>
+    <gun_yaw_offset> 0.8 </gun_yaw_offset>
+
+    <rune_gun_pitch_offset> 0.2 </rune_gun_pitch_offset>
+    <rune_gun_yaw_offset>0.8</rune_gun_yaw_offset>
+
+    <!--打符开火决策-->
+    <bs_fly_time> 600 </bs_fly_time>
+    <ready_time> 300 </ready_time>        
+
+</opencv_storage>
